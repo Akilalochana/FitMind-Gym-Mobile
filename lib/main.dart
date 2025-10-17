@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_movie_app/screen.dart';
+import 'package:flutter_movie_app/pages/home_page.dart';
+
+
 
 
 
@@ -14,11 +16,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'FitMind Gym',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const Screen(),
+      home: const HomePage(),
 
       
     );
