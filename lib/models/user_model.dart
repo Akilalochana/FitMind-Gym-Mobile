@@ -6,7 +6,7 @@ class User {
   final String fillName;
   final String gender;
   final String address;
-  final String age;
+  final int age;
   final String description;
   int totalExercisesCompleted = 0;
   int totalEquipmentHandOvered = 0;
