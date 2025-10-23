@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_movie_app/constants/colors.dart';
 import 'package:flutter_movie_app/constants/responsive.dart';
+import 'package:flutter_movie_app/data/equipment_data.dart';
+import 'package:flutter_movie_app/data/ezercise_data.dart';
 import 'package:flutter_movie_app/data/user_data.dart';
+import 'package:flutter_movie_app/models/equipment_model.dart';
+import 'package:flutter_movie_app/pages/exercise_details_page.dart';
 import 'package:flutter_movie_app/widgets/exercise_card.dart';
 import 'package:flutter_movie_app/widgets/progress_card.dart';
 import 'package:intl/intl.dart';
@@ -20,6 +24,11 @@ class _HomePageState extends State<HomePage> {
 
   //user data
   final userData = user;
+
+  //exercise and equipment data
+  final exerciseList = ExerciseData().exerciseList;
+
+  final equipmentList = EquipmentData().equipmentList;
 
   @override
   Widget build(BuildContext context) {
@@ -67,34 +76,85 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(height: 10),
 
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ExerciseCard(
-                      title: "warmup",
-                      imageUrl: "assets/images/exercises/dragging.png",
-                      description: "see more ..",
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => ExerciseDetailsPage(
+                                  exe rciseTitle: "warmup",
+                                  exerciseDescription:
+                                      "A comprehensive full body workout to strengthen and tone all major muscle groups.",
+                                  exerciseList: exerciseList,
+                                ),
+                          ),
+                        );
+                      },
+                      child: ExerciseCard(
+                        title: "warmup",
+                        imageUrl: "assets/images/exercises/dragging.png",
+                        description: "see more ..",
+                      ),
                     ),
-                    ExerciseCard(
-                      title: "equipment",
-                      imageUrl: "assets/images/equipments/dumbbell.png",
-                      description: "see more ..",
+                    GestureDetector(
+                      child: ExerciseCard(
+                        title: "equipment",
+                        imageUrl: "assets/images/equipments/dumbbell.png",
+                        description: "see more ..",
+                      ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 12),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ExerciseCard(
-                      title: "warmup",
-                      imageUrl: "assets/images/exercises/dragging.png",
-                      description: "see more ..",
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => ExerciseDetailsPage(
+                                  exerciseTitle: "Exercise",
+                                  exerciseDescription:
+                                      "A comprehensive full body workout to strengthen and tone all major muscle groups.",
+                                  exerciseList: exerciseList,
+                                ),
+                          ),
+                        );
+                      },
+                      child: ExerciseCard(
+                        title: "Exercise",
+                        imageUrl: "assets/images/exercises/dragging.png",
+                        description: "see more ..",
+                      ),
                     ),
-                    ExerciseCard(
-                      title: "equipment",
-                      imageUrl: "assets/images/equipments/dumbbell.png",
-                      description: "see more ..",
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return ExerciseDetailsPage(
+                                exerciseTitle: "Stretching",
+                                exerciseDescription:
+                                    "Explore various gym equipments to enhance your workout experience.",
+                                exerciseList: exerciseList,
+                              );
+                            },
+                          ),
+                        );
+                      },
+                      child: ExerciseCard(
+                        title: "stretching",
+                        imageUrl: "assets/images/equipments/dumbbell.png",
+                        description: "see more ..",
+                      ),
                     ),
                   ],
                 ),
