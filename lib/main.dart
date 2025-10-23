@@ -3,6 +3,7 @@ import 'package:flutter_movie_app/pages/add_new_page.dart';
 import 'package:flutter_movie_app/pages/favourite_page%20.dart';
 import 'package:flutter_movie_app/pages/home_page.dart';
 import 'package:flutter_movie_app/pages/profile_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,6 +29,10 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
+      ),
       debugShowCheckedModeBanner: false,
       title: 'FitMind Gym',
       home: Scaffold(
