@@ -31,20 +31,20 @@ class ExerciseCard extends StatelessWidget {
             Text(
               title,
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 14,
                 fontWeight: FontWeight.w600,
                 color: kMainBlackColor,
               ),
             ),
             const SizedBox(height: 5),
-            Image.asset(imageUrl, width: 80, fit: BoxFit.cover),
+            Image.asset(imageUrl, width: 90, fit: BoxFit.cover),
 
             const SizedBox(height: 5),
 
             Text(
               description,
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 12,
                 fontWeight: FontWeight.normal,
                 color: kMainColor,
               ),
