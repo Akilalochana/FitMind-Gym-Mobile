@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_movie_app/constants/colors.dart';
 import 'package:flutter_movie_app/constants/responsive.dart';
 import 'package:flutter_movie_app/data/equipment_data.dart';
 import 'package:flutter_movie_app/data/ezercise_data.dart';
 import 'package:flutter_movie_app/data/user_data.dart';
-import 'package:flutter_movie_app/models/equipment_model.dart';
+import 'package:flutter_movie_app/pages/equipments_page.dart';
 import 'package:flutter_movie_app/pages/exercise_details_page.dart';
 import 'package:flutter_movie_app/widgets/exercise_card.dart';
 import 'package:flutter_movie_app/widgets/progress_card.dart';
@@ -86,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                           MaterialPageRoute(
                             builder:
                                 (context) => ExerciseDetailsPage(
-                                  exe rciseTitle: "warmup",
+                                  exerciseTitle: "warmup",
                                   exerciseDescription:
                                       "A comprehensive full body workout to strengthen and tone all major muscle groups.",
                                   exerciseList: exerciseList,
@@ -101,6 +102,20 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => EquipmentDetailsPage(
+                                  equipmentTitle: "Equipments",
+                                  equipmentDescription:
+                                      "A comprehensive full body workout to strengthen and tone all major muscle groups.A comprehensive full body workout to strengthen and tone all major muscle groups.A comprehensive full body workout to strengthen and tone all major muscle groups.A comprehensive full body workout to strengthen and tone all major muscle groups.",
+                                  equipmentList: equipmentList,
+                                ),
+                          ),
+                        );
+                      },
                       child: ExerciseCard(
                         title: "equipment",
                         imageUrl: "assets/images/equipments/dumbbell.png",
@@ -122,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                                 (context) => ExerciseDetailsPage(
                                   exerciseTitle: "Exercise",
                                   exerciseDescription:
-                                      "A comprehensive full body workout to strengthen and tone all major muscle groups.",
+                                      "A comprehensive full body workout to strengthen and tone all major muscle groups.A comprehensive full body workout to strengthen and tone all major muscle groups.A comprehensive full body workout to strengthen and tone all major muscle groups.A comprehensive full body workout to strengthen and tone all major muscle groups.",
                                   exerciseList: exerciseList,
                                 ),
                           ),
